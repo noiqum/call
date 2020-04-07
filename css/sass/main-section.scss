@@ -1,7 +1,10 @@
-
+@import './mixins.scss';
 main{
     width: 100%;
     height: 50rem;
+    @include respond(large){
+        height: 75rem;
+    }
 }
 
 
@@ -25,7 +28,17 @@ main{
     text-align: center;
     justify-content: center;
     align-items: center;
-    
+    @include respond(medium){
+        margin: 1rem;
+        background-size: 100% auto;
+        background-origin: padding-box;
+        // background-position: center;
+    }
+    @include respond(large){
+        margin: 2rem;
+        background-image: url('./src/water.jpg');
+    }
+
     border-radius: 15px;
     &__span{
         font-size: 2rem;
@@ -35,7 +48,18 @@ main{
 
     &__span{
         
-            
+        @include respond(large){
+            font-size: 6rem;
+            background-color: rgba(0, 0, 0, 0.637) ;
+            padding: 0.5rem 1rem;
+            border-radius: 10px;
+            letter-spacing: 1rem;
+
+            & > em{
+                font-weight: 700;
+                font-size: 6.5rem;
+            }
+        }
         
         &-arrow{
 
