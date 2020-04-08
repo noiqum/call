@@ -1,0 +1,89 @@
+@import './variables.scss';
+@import './mixins.scss';
+
+// <section class="tour">
+//         <div class="tour__container">
+//             <div class="tour__container__item tour-mountain"></div>
+//             <div class="tour__container__item tour-lake"></div>
+//             <div class="tour__container__item tour-forest"></div>
+//             <div class="tour__container__item tour-river"></div>
+//         </div>
+//     </section>
+.tour__header{
+    text-align: center;
+    color: $blue-dark;
+    
+    padding: 2rem;
+
+    & > h2{
+        font-size: 3rem;
+        letter-spacing: 2px;
+    }
+}
+
+
+.tour__container{
+    display: grid;
+    grid-template-rows: repeat(4,minmax(30rem,50rem));
+    grid-gap: 2rem;
+    
+
+    &__item{
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        width: 100%;
+        height: auto;
+        padding: 1rem;
+        border: 5px solid white;
+        border-radius: 10px;
+        position: relative;
+
+        
+    }
+}
+
+.tour{
+
+    &-mountain{
+        background-image: url('./src/mountain-small.jpg');
+        &::after{
+            content: 'Mountain';
+            background-color: rgba(255, 255, 255, 0.75);
+            color: $blue-dark;
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            clip-path: polygon(0 0, 0% 100%, 100% 0);;
+            width: 15rem;
+            height: 15rem;
+            text-align: start;
+            font-size: 2.5rem;
+            padding: 0.5rem;
+
+        }
+    }
+    &-lake{
+        background-image: url('./src/lake-sm.jpg');
+
+        &::after{
+            content: 'Lake';
+            @include tag;
+        }
+    }
+    &-forest{
+        background-image: url('./src/forest-small.jpg');
+        &::after{
+            content: 'Forest';
+            @include tag;
+        }
+        
+    }
+    &-river{
+        background-image: url('./src/river-small.jpg');
+
+        &::after{
+            content: 'River';
+            @include tag;
+        }
+    }
+}

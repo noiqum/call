@@ -18,4 +18,11 @@ function navMove(){
         
     }
 };
-gsap.from('.burger',{duration:1,translateY:-1000,ease:'power3.ease'})
+gsap.from('.burger',{duration:3,translateY:-1000,ease:'power3.ease'})
+
+gsap.from('.main-section',{opacity:0,duration:3,translateX:-1000,ease:'power2.out'})
+
+gsap.from('.main__image__span',{delay:4,duration:2,opacity:0,ease:'power2.out'})
+
+// AOS library///
+AOS.init();

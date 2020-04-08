@@ -70,8 +70,18 @@ main{
         position: absolute;
         bottom: 10%;
         animation: arrow 1s ease infinite alternate-reverse;
+        
+        @include respond(large){
+            width:6rem;
+            height: 6rem;
+        }
+
         & img{
             margin-top: 20%;
+            @include respond(large){
+                margin-top: 40%;
+                transform: scale(1.5);
+            }
         }
         }
     }
